@@ -1,0 +1,26 @@
+{
+"作者": "LEKBOX",
+"站名": "欧乐搜索",
+"主页url":"https://olevod.com",
+"数组": "lazyload&&vodlist_title",
+"副标题": "voddate\">&&</em>",
+"图片": "data-original=\"&&\"",
+"标题": "title=\"&&\"",
+"搜索模式": "0",
+"搜索后缀": "/index.php/vod/detail/id/",
+"搜索url": "https://olevod.com/index.php/vod/search.html?wd={wd}",
+"影片类型":"类型：</span>&&</a>",
+"影片年代": "年份：</span>&&</a>",
+"影片地区": "地区：</span>&&</a>",
+"导演": "导演：</span>&&</a>",
+"演员": "主演：</span>&&</div>",
+"简介": "简介：</span>&&详细",
+"线路数组":"play_source_tab&&</div>[不包含:夸克][排序:💯推荐>在线观看]",
+"线路标题": "nbsp;&&</a>[替换:欧乐官方播放器>>💯推荐]",
+"播放数组": "id=\"playlistbox&&</div>",
+"免嗅":"1",
+"分类":"电影$1#电视剧$2#综艺$3#动漫$4#短剧$14#纪录片$111",
+"分类url": "https://olevod.com/index.php/vod/show/id/{cateId}/area/{area}/by/{by}/class/{class}/page/{catePg}/lang/{lang}/year/{year}.html"}
+]
+}
+}
