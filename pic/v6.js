@@ -9,7 +9,7 @@ var rule = {
 	searchUrl: '/e/search/index.php#tempid=1&tbname=article&mid=1&dopost=search&submit=&keyborad=**;post',
 	searchable:2,
 	quickSearch:1,
-	filterable:0,
+	filterable:1,
 	headers:{
 		'User-Agent': 'PC_UA',
 		'Referer': 'http://www.xb6v.com/'
