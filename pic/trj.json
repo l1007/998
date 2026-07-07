@@ -18,7 +18,7 @@
 "线路数组":"play_list_box hide&&</div>[不包含:夸克][排序:Ⓘ>Ⓡ]",
 "线路标题": "data-name=&&>[替换:线路>>💯推荐]",
 "播放数组": "id=\"playlistbox&&</div>",
-"免嗅":"1",
+//"免嗅":"1",
 "分类":"电影$1#电视剧$2#综艺$3#动漫$4#短剧$42#纪录片$38",
 "分类url": "https://www.trjyy.com/index.php/vod/show/id/{cateId}/area/{area}/by/{by}/class/{class}/page/{catePg}/lang/{lang}/year/{year}.html",
 "筛选":{
