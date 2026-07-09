@@ -1,87 +1,33 @@
+// 网址发布页 www.qiyoudy.info
+muban.首图2.二级.title = 'h1&&Text;.data--span:eq(0)&&Text';
+muban.首图2.二级.desc = '.data.hidden-sm&&Text;;;p.line1--span&&Text;.data--span:eq(1)&&Text';
+muban.首图2.二级.content = '.desc--span&&Text';
+muban.首图2.二级.tabs = '.nav-tabs a';
 var rule = {
-    title: '量子资源',
-    host: 'https://cj.lzcaiji.com',
-    homeUrl: '/api.php/provide/vod?ac=detail',
-    searchUrl: '/api.php/provide/vod?ac=detail&wd=**&pg=fypage',
-    detailUrl: '/api.php/provide/vod?ac=detail&ids=fyid', //非必填,二级详情拼接链接
-    searchable: 2,
-    quickSearch: 0,
-    filterable: 1,
-    play_parse: false,
-    lazy: '',
-    multi: 1,
-    timeout: 5000,
-    limit: 6,
-    url: '/api.php/provide/vod?ac=detail&t=fyclass&pg=fypage&f=',
-    class_name: '国产剧&香港剧&韩国剧&动作片&剧情片&喜剧片&爱情片&国产动漫',
-    class_url: '13&14&15&6&11&7&8&29',
-    推荐: 'json:list;vod_name;vod_pic;vod_remarks;vod_id', // double: true, // 推荐内容是否双层定位
-    // 一级: 'json:list;vod_name;vod_pic;vod_remarks;vod_id',
-    一级: `js:
-        function getParam(url,name) {
-            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-            var r = url.split('?')[1].match(reg); //获取url中"?"符后的字符串并正则匹配
-            var context = "";
-            if (r != null)
-                context = decodeURIComponent(r[2]);
-            reg = null;
-            r = null;
-            return context == null || context == "" || context == "undefined" ? "" : context;
-        }
-        let d = [];
-        // 忽略分类
-        let cate_exclude = '34,35,45';
-        let type_id = getParam(input,'t');
-        if(!cate_exclude.match(type_id)){
-            let html = request(input);
-            let list = JSON.parse(html).list;
-            list.forEach(function (it){
-                if(!cate_exclude.match(it.type_id)){
-                    d.push({
-                        title:it.vod_name,
-                        img:it.vod_pic,
-                        desc:it.vod_remarks,
-                        url:it.vod_id
-                    });
-                }
-            });
-        }
-        setResult(d);
-        // log(input);
-    `,
-    /**
-     * 资源采集站，二级链接解析
-     */
-    // 二级: `json:list;vod_name;vod_pic;vod_remarks;vod_id`,
-    二级: `js:
-        let html = request(input);
-        let list = JSON.parse(html).list;
-        if(list.length===1){
-           VOD = list[0];
-            VOD.vod_blurb = VOD.vod_blurb.replace(/　/g, '').replace(/<[^>]*>/g, '');
-            VOD.vod_content = VOD.vod_content.replace(/　/g, '').replace(/<[^>]*>/g, '');
-        }
-    `,
-    /**
-     * 搜索解析 过滤部分资源
-     */
-    // 搜索: 'json:list;vod_name;vod_pic;vod_remarks;vod_id',
-    搜索: `js:
-        let d = [];
-        // 忽略分类
-        let cate_exclude = '34,35,45';
-        let html = request(input);
-        let list = JSON.parse(html).list;
-        list.forEach(function (it){
-            if(!cate_exclude.match(it.type_id)){
-                d.push({
-                    title:it.vod_name,
-                    img:it.vod_pic,
-                    desc:it.vod_remarks,
-                    url:it.vod_id
-                });
-            }
-        });
-        setResult(d);
-    `,
+    title:'奇优影院',
+    模板:'首图2',
+    host:'http://1e6e.com',
+    // url:'/list/fyclass_fypage.html',
+    url:'/list/fyclass_fypage.html?order=fyfilter',
+    filterable:1,//是否启用分类筛选,
+    filter_url:'{{fl.by}}',
+    filter:{
+        "1":[{"key":"by","name":"排序","value":[{"n":"按时间","v":"time"},{"n":"按人气","v":"hit"}]}],
+        "2":[{"key":"by","name":"排序","value":[{"n":"按时间","v":"time"},{"n":"按人气","v":"hit"}]}],
+        "3":[{"key":"by","name":"排序","value":[{"n":"按时间","v":"time"},{"n":"按人气","v":"hit"}]}],
+        "4":[{"key":"by","name":"排序","value":[{"n":"按时间","v":"time"},{"n":"按人气","v":"hit"}]}],
+        "6":[{"key":"by","name":"排序","value":[{"n":"按时间","v":"time"},{"n":"按人气","v":"hit"}]}]
+    },
+    filter_def:{
+        1:{by:'time'},
+        2:{by:'time'},
+        3:{by:'time'},
+        4:{by:'time'},
+        6:{by:'time'}
+    },
+    class_parse: '.stui-header__menu li:gt(0):lt(5);a&&Text;a&&href;.*/(.*?).html',
+    // searchUrl:'/search.php;**',
+    searchUrl:'/search.php#searchword=**;post',
+    // 搜索:'js:let url=input.split(";")[0];let d=[];let body={searchword:input.split(";")[1]};body="searchword="+input.split(";")[1];fetch_params.body=body;let html=post(url,fetch_params);let pdfa=jsp.pdfa;let pdfh=jsp.pdfh;let pd=jsp.pd;let lists=pdfa(html,"ul.stui-vodlist__media&&li");lists.forEach(function(it){d.push({title:pdfh(it,".title&&Text"),url:pd(it,"a&&href"),desc:pdfh(html,".pic-text&&Text"),pic_url:pd(html,".lazyload&&data-original")})});setResult(d);',
+    //搜索:'li.stui-vodlist__item;a&&title;a&&data-original;.pic-text&&Text;a&&href'
 }
