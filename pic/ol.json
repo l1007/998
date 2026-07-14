@@ -8,7 +8,7 @@
 "标题": "title=\"&&\"",
 "搜索模式": "0",
 "搜索后缀": "/index.php/vod/detail/id/",
-"搜索url": "https://olevod.com/index.php/vod/search.html?wd={wd}",
+"搜索url": "https://www.olevod.com/search?q={wd}",
 "影片类型":"类型：</span>&&</a>",
 "影片年代": "年份：</span>&&</a>",
 "影片地区": "地区：</span>&&</a>",
