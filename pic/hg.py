@@ -3711,17 +3711,16 @@ class Spider(Spider):
 
     def homeContent(self, filter):
         class_list = [
-            {"type_id": "ai_comic", "type_name": "AI漫剧"},
-            {"type_id": "latest", "type_name": "最新"},
-            {"type_id": "hot", "type_name": "最热"},
-            {"type_id": "male", "type_name": "男频"},
-            {"type_id": "female", "type_name": "女频"},
+            {"type_id": "comic-drama", "type_name": "AI漫剧"},
+            {"type_id": "real-drama", "type_name": "短剧"},
+            {"type_id": "ai-drama", "type_name": "AI剧"},
+            {"type_id": "comic", "type_name": "漫画"}
         ]
         groups = [
             {"key": "topic", "name": "主题", "value": [
                 {"n": "全部", "v": ""}, {"n": "现言", "v": "cate_1021"}, {"n": "女性成长", "v": "cate_1048"},
-                {"n": "脑洞", "v": "cate_262"}, {"n": "奇幻", "v": "cate_1020"}, {"n": "玄幻", "v": "cate_1019"},
-                {"n": "古言", "v": "cate_439"}, {"n": "战神", "v": "cate_1038"}, {"n": "宫斗", "v": "cate_246"},
+                {"n": "脑洞", "v": "creative"}, {"n": "奇幻", "v": "cate_1020"}, {"n": "玄幻", "v": "fantasy"},
+                {"n": "古言", "v": "cate_439"}, {"n": "战神", "v": "cate_1038"}, {"n": "剧情", "v": "drama"},
                 {"n": "仙侠", "v": "cate_1013"}, {"n": "权谋", "v": "cate_1047"}, {"n": "种田", "v": "cate_1180"},
                 {"n": "年代爱情", "v": "cate_1022"}, {"n": "悬疑", "v": "cate_165"}, {"n": "喜剧", "v": "cate_303"},
                 {"n": "青春", "v": "cate_297"}, {"n": "志怪", "v": "cate_1027"}, {"n": "民国爱情", "v": "cate_1025"},
