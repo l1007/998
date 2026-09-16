@@ -3716,6 +3716,10 @@ class Spider(Spider):
             {"type_id": "hot", "type_name": "最热"},
             {"type_id": "male", "type_name": "男频"},
             {"type_id": "female", "type_name": "女频"},
+            {"type_id": "ai_drama", "type_name": "AI剧"},
+            {"type_id": "real", "type_name": "短剧"},
+            {"type_id": "real_drama", "type_name": "真人短剧"},
+            {"type_id": "comic_drama", "type_name": "漫剧"},
         ]
         groups = [
             {"key": "topic", "name": "主题", "value": [
